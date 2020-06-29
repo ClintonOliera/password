@@ -9,3 +9,11 @@ class Account:
         self.account_name = account_name
         self.password = password
         self.email = email
+
+    def save_account(self):
+        """
+        A method saves account objects into account_list
+        """  
+        Account.account_list.append(self)  
+
+        
