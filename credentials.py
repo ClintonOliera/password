@@ -30,12 +30,21 @@ class Credentials:
              return credentials
 
     @classmethod
-    def credential_exist(cls,name):
+    def credentials_exist(cls,name):
         """
         """
         for credentials in cls.credentials_list:
             if credentials.password == name:
                     return credentials
+
+        return False
+
+    @classmethod
+    def display_credentials(cls): 
+        '''
+        method that returns the credentials list
+        '''
+        return cls.credentials_list       
 
 
 
