@@ -22,6 +22,7 @@ class Account:
         """
         
         Account.account_list.remove(self) 
+        
     @classmethod
     def find_by_name(cls,name):
         for account in cls.account_list:
