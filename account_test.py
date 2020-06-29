@@ -16,6 +16,7 @@ class TestAccount(unittest.TestCase):
 
     def test_save_account(self):
         """
+
         """
         self.new_account.save_account()
         self.assertEqual(len(Account.account_list),1)
@@ -25,6 +26,17 @@ class TestAccount(unittest.TestCase):
         tearDown method that does clean up after each test case has run.
         """  
         Account.account_list = []  
+
+    def test_save_multiple_account(self):
+        """
+
+        """
+        self.new_account.save_account()
+        test_account =Account("clin","twiter","565656","tw@g.com")
+        test_account.save_account()
+        self.assertEqual(len(Account.account_list),2)
+
+
 
 
 
