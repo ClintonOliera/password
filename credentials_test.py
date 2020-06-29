@@ -49,6 +49,19 @@ class TestCredentials(unittest.TestCase):
         self.new_credentials.delete_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
 
+    def test_find_credentials_by_credentials_name(self):
+        """
+        test to check if we can find a credential by credentials_name and display information
+        """
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("status","clinton","454545","st@g.com")
+        test_credentials.save_credentials()
+
+        found_credentials = Credentials.find_by_name("status")
+        self.assertEqual(found_credentials.email,test_credentials.email)
+
+
+
 
 
 
