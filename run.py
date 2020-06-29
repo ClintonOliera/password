@@ -105,6 +105,19 @@ def main():
             print(f"You can now login to your {account_name} account using your password.")
             print ('\n')
 
+     elif short_code == 'da':
+             if display_accounts():
+                 print("Here is your account and your details")
+                 print('\n')
+                 for account in display_accounts():
+                     print(f"Account name:{account.account_name}  User name: {account.user_name} Password:{account.password}")
+                     print('\n')
+             else:
+                 print('\n')
+                 print("You dont seem to have created an account.Sign up to create a new account.")
+                 print('\n')
+
+
 
 if __name__ == "__main__":
     main()             
