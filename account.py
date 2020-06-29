@@ -16,4 +16,17 @@ class Account:
         """  
         Account.account_list.append(self)  
 
+    def delete_account(self):
+        """
+        A method that deletes saved accounts from the account list
+        """
         
+        Account.account_list.remove(self) 
+    @classmethod
+    def find_by_name(cls,name):
+        for account in cls.account_list:
+            if account.account_name == name:
+                return account        
+
+    
+    
