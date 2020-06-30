@@ -104,6 +104,10 @@ def main():
             print(f"A New {account_name} Account with the user name  {u_name} has been created.")
             print(f"You can now login to your {account_name} account using your password.")
             print ('\n')
+     elif short_code == "ex":
+            print(f"Thanks {user_name} for your time.I hope you enjoyed my service.Bye...")
+            break
+            
 
      elif short_code == 'da':
              if display_accounts():
@@ -117,6 +121,55 @@ def main():
                  print("You dont seem to have created an account.Sign up to create a new account.")
                  print('\n')
 
+     elif short_code == 'ln':
+            print("Enter your password to login.")
+            search_account = input()
+            if check_existing_accounts(search_account):
+                print("\033[1;32;1m   \n")
+                print(f"You are now logged in to your {account_name} account")
+                print("\033[1;37;1m   \n")  
+
+                while True:
+                    print('''Use these short codes:
+                    CA -> Create new credential.
+                    DC -> Display your credentials list
+                    ex ->Log out your credentials account. ''')
+                    short_code = input().lower()
+                    if short_code == "ca":
+                        print("Create new credential")
+                        print('_' * 20)
+                        credentials_name = input('Credential name:')
+                        print('\n')
+                        usr_name = input(f"{credentials_name} user name:")
+                        print('\n')
+                        print('*' * 20)
+                        pwd = input(f"{credentials_name} password:")
+                        save_credentials(create_credentials(credentials_name,u_name,pwd,e_address))
+                        print('\n')
+                        print(f"A New {credentials_name} Account with the user name  {usr_name} has been created.")
+                        print ('\n')  
+
+                    elif short_code == 'dc':
+                         if display_credentials():
+                             print("Here is your credentials")
+                             print('\n')
+                             for credentials in display_credentials():
+                                 print(f"Credential name:{credentials.credentials_name}  User name: {credentials.name} Password:{credentials.password}")
+                                 print('\n')
+                         else:
+                              print('\n')
+                              print("You don't seem to have created any account yet")
+                              print('\n')  
+
+                    elif short_code == "ex":
+                        print('\n')
+                        print(f"You have logged out your {account_name} account")
+                        print('\n')
+                        break
+         
+     else:
+        print("I really dont get that please use the short codes") 
+        print('\n')    
 
 
 if __name__ == "__main__":
