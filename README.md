@@ -28,10 +28,10 @@
 ## Testing the Application
 * To run the tests for the class file and check if it functions well:
 
-        $ python3.6 credentials_test.py
+        $ python3.8 credentials_test.py
         
 ## Technologies Used
-* Python3.6
+* Python3.8.2
 
 ## License
 MIT &copy;2020 [ClintonOliera](https://github.com/ClintonOLiera/)
